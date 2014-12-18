@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>YouSheng | 联系我们 </title>
+    <title>优胜 | 联系我们 </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 
     <script src="js/jquery.min.js"></script>
@@ -66,69 +66,49 @@
                             <div class="map">
                                 <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe>
                                 <br>
-                                <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color: #666; text-align: left; font-size: 12px">View Larger Map</a></small>
+                                <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color: #666; text-align: left; font-size: 12px">查看大地图</a></small>
                             </div>
                         </div>
                         <div class="company_address">
                             <h3>公司信息 :</h3>
-                            <p>500 Lorem Ipsum Dolor Sit,</p>
-                            <p>22-56-2-9 Sit Amet, Lorem,</p>
-                            <p>USA</p>
+                            <p>上海市-浦东新区</p>
                             <p>电话:(00) 222 666 444</p>
                             <p>传真: (000) 000 00 00 0</p>
-                            <p>邮箱: <span>info@mycompany.com</span></p>
+                            <p>邮箱: <span>yousheng@bs.com</span></p>
                             <!-- <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>-->
                         </div>
                     </div>
                     <div class="col span_2_of_3">
                         <div class="contact-form">
                             <h3>联系我们</h3>
-                            <form method="post" onClick ="toOutLook();" action="js/camera.min.js" >
-                                <script type="text/javascript">
-                                      function toOutLook(){ 
-                                            var objFrm = document.frmEmail; 
-                                            var objFrmOutLook = document.frmEmailOutLook; 
-                                            var msg = ""; 
-                                            msg += "姓名: " + objFrm.name.value + "  "; 
-                                            msg += "电话: " + objFrm.phone.value + "  "; 
-                                            msg += "网址: " + objFrm.website.value + "  "; 
-                                            msg += "主题: " + objFrm.subject.value + "  "; 
-                                            msg += "内容: " + objFrm.message.value + "  "; 
-                                            objFrmOutLook.message.value = msg; 
-                                            objFrmOutLook.action = "mailto:sundysea@hotmail.com?subject=" + objFrm.subject.value; 
-                                            objFrmOutLook.submit(); 
-                                        } 
-                                </script>
-                                <div>
-                                    <span>
-                                        <label>您的名字</label></span>
-                                    <span>
-                                        <input name="userName" type="text" class="textbox"></span>
-                                </div>
-                                <div>
-                                    <span>
-                                        <label>电子邮箱</label></span>
-                                    <span>
-                                        <input name="userEmail" type="text" class="textbox"></span>
-                                </div>
-                                <div>
-                                    <span>
-                                        <label>您的手机</label></span>
-                                    <span>
-                                        <input name="userPhone" type="text" class="textbox"></span>
-                                </div>
-                                <div>
-                                    <span>
-                                        <label>您的留言</label></span>
-                                    <span>
-                                        <textarea name="userMsg"> </textarea></span>
-                                </div>
-                                <div>
-                                    <span>
-                                        <input type="submit" value="提交"></span>
-                                </div>
-                            </form>
-
+							<form name="frmEmailOutLook" action="" method="post" enctype="text/plain">
+								<input type="hidden" name="message" value="">
+							</form>
+							<form name="frmEmail" action="" method="post">
+								您的姓名:<input type="text" name="name" value=" "><br>
+								性别:<input type="text" name="sex" value=" "><br>
+								您的电话:<input type="text" name="phone" value=" "><br>
+								邮件主题:<input type="text" name="subject" value=" "><br>
+								您的留言:<textarea name="message"></textarea><br>
+								<input type="button" name="send" value="发送"  onclick="toOutLook()">
+							</form>
+							<script language="javascript">
+								function toOutLook() {
+									var objFrm = document.frmEmail;
+									var objFrmOutLook = document.frmEmailOutLook;
+									var msg = "";
+									msg += "姓名: " + objFrm.name.value + "  ";
+									msg += "网址: " + objFrm.sex.value + "  ";
+									msg += "电话: " + objFrm.phone.value + "  ";
+									msg += "主题: " + objFrm.subject.value + "  ";
+									msg += "留言: " + objFrm.message.value + "  ";
+									objFrmOutLook.message.value = msg;
+									objFrmOutLook.action = "mailto:1483712819@qq.com?subject=" + objFrm.subject.value;
+									objFrmOutLook.submit();
+								}
+							</script>
+						
+							
                         </div>
                     </div>
                 </div>
