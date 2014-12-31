@@ -3,7 +3,8 @@
 <head>
     <title>优胜 | 联系我们 </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-
+	<link rel="stylesheet" href="css/lrtk.css" type="text/css" />
+	<script type="text/javascript" src="js/cs_q.js"></script>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -15,6 +16,40 @@
     </script>
 </head>
 <body>
+	<div id="qq_icon"></div>
+	<div id="cs_online">
+		<ul class='qq_context'>
+			<li>
+				<span class='span_t'>在线客服01：</span>
+				<span class='qq_num'></span>
+			</li>
+			<li>
+				<span class='span_t'>在线客服02：</span>
+				<span class='qq_num'></span>
+			</li>
+			<li>
+				<span class='span_t'>在线客服03：</span>
+				<span class='qq_num'></span>
+			</li>
+			<li>
+				<span class='span_t'>在线客服04：</span>
+				<span class='qq_num'></span>
+			</li>
+			<li>
+				<span class='span_t'>在线客服05：</span>
+				<span class='qq_num'></span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		myEvent(window, 'load', function () {
+			dealy('qq_icon', 1);						//1秒后显示QQ图标，默认为1秒，可自行设置
+			settop('qq_icon', 'cs_online', 150);		//设置在线客服的高度，默认150，可自行设置
+			var span_q = getbyClass('cs_online', 'qq_num');
+			setqq(span_q, ['1908311089', '1908311089', '1908311089', '1908311089', '1908311089']);		//填写5个QQ号码
+			click_fn('qq_icon', 'cs_online');
+		});
+	</script>
     <!----start-wrap---->
     <div class="wrap">
         <!---start-header---->
@@ -54,8 +89,8 @@
         </div>
         <!---End-header---->
     </div>
+	
     <!---start-content---->
-    <div class="content">
         <!----start-contact---->
         <div class="contact">
             <div class="wrap">
@@ -64,7 +99,7 @@
                         <div class="contact_info">
                             <h3>我们在这</h3>
                             <div class="map">
-                                <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe>
+                                <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""></iframe>
                                 <br>
                                 <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color: #666; text-align: left; font-size: 12px">查看大地图</a></small>
                             </div>
@@ -81,33 +116,44 @@
                     <div class="col span_2_of_3">
                         <div class="contact-form">
                             <h3>联系我们</h3>
-							<form name="frmEmailOutLook" action="" method="post" enctype="text/plain">
-								<input type="hidden" name="message" value="">
+
+							<form method="post" action="insert.php">
+								<div>
+									<span>
+										<label>您的姓名</label></span>
+									<span>
+										<input name="name" type="text" class="textbox" style="width: 350px;"></span>
+								</div>
+								<div>
+									<span>
+										<label>性别</label></span>
+									<span>
+										<input name="sex" type="text" class="textbox"
+											style="width: 350px;"></span>
+								</div>
+								<div>
+									<span>
+										<label>您的邮件</label></span>
+									<span>
+										<input name="email" type="text" class="textbox" style="width: 350px;"></span>
+								</div>
+								<div>
+									<span>
+										<label>您的电话</label></span>
+									<span>
+										<input name="phone" type="text" class="textbox" style="width: 350px;"></span>
+								</div>
+								<div>
+									<span>
+										<label>您的留言</label></span>
+									<span>
+										<textarea name="subject"> </textarea></span>
+								</div>
+								<div>
+									<span>
+										<input type="submit" value="提交"></span>
+								</div>
 							</form>
-							<form name="frmEmail" action="" method="post">
-								您的姓名:<input type="text" name="name" value=" "><br>
-								性别:<input type="text" name="sex" value=" "><br>
-								您的电话:<input type="text" name="phone" value=" "><br>
-								邮件主题:<input type="text" name="subject" value=" "><br>
-								您的留言:<textarea name="message"></textarea><br>
-								<input type="button" name="send" value="发送"  onclick="toOutLook()">
-							</form>
-							<script language="javascript">
-								function toOutLook() {
-									var objFrm = document.frmEmail;
-									var objFrmOutLook = document.frmEmailOutLook;
-									var msg = "";
-									msg += "姓名: " + objFrm.name.value + "  ";
-									msg += "网址: " + objFrm.sex.value + "  ";
-									msg += "电话: " + objFrm.phone.value + "  ";
-									msg += "主题: " + objFrm.subject.value + "  ";
-									msg += "留言: " + objFrm.message.value + "  ";
-									objFrmOutLook.message.value = msg;
-									objFrmOutLook.action = "mailto:1483712819@qq.com?subject=" + objFrm.subject.value;
-									objFrmOutLook.submit();
-								}
-							</script>
-						
 							
                         </div>
                     </div>
@@ -115,7 +161,7 @@
             </div>
         </div>
         <!----End-contact---->
-    </div>
+   
     <div class="clear"></div>
     <!---End-content---->
     <br />
